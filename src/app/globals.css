@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+/* Green Channels — photography-led corporate site.
+   Structure and feel are inspired by large-format apparel-manufacturer sites:
+   full-screen imagery, wide-spaced uppercase titles, black bar, generous white. */
+:root {
+  --black: #0a0a0a;
+  --white: #ffffff;
+  --paper: #f6f6f4;
+  --text: #2a2a2a;
+  --muted: #6b6b6b;
+  --line: rgb(10 10 10 / 0.14);
+  --green: #2fa053;
+}
+
+@theme inline {
+  --color-black: var(--black);
+  --color-paper: var(--paper);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-green: var(--green);
+  --font-heading: var(--font-montserrat), "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  --font-body: var(--font-nunito), "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  background: var(--black);
+}
+body {
+  background: var(--white);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+::selection {
+  background: var(--green);
+  color: #fff;
+}
+:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Wide-spaced uppercase headings */
+.wide {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-weight: 500;
+}
+.wide-sm {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 600;
+}
+.nav-link {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  font-size: 0.6875rem;
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1.12);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+.bob {
+  animation: bob 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

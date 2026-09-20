@@ -29,10 +29,8 @@ export async function POST(request: Request) {
   const errors: Record<string, string> = {};
   const get = (k: string) => String(fd.get(k) ?? "").trim();
   if (!get("name")) errors.name = "Please enter your name.";
-  if (!get("company")) errors.company = "Please enter your company.";
   if (!EMAIL.test(get("email"))) errors.email = "Please enter a valid email address.";
   if (!get("category")) errors.category = "Please choose a product category.";
-  if (!get("description")) errors.description = "Please describe the product.";
   for (const [k, max] of [
     ["name", 120],
     ["company", 160],
@@ -50,6 +48,8 @@ export async function POST(request: Request) {
     if (!ALLOWED.has(ext)) errors.files = `“${f.name}” is not an accepted file type.`;
     else if (f.size > MAX_BYTES) errors.files = `“${f.name}” is larger than 10 MB.`;
   }
+
+  if (!get("description") && files.length === 0) errors.description = "Please describe what you need or attach a file.";
 
   if (Object.keys(errors).length) {
     return NextResponse.json({ ok: false, errors }, { status: 422 });

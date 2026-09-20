@@ -18,7 +18,8 @@ DONE and verified (tsc, eslint, `next build`, headless-Edge screenshots desktop 
   Development, Quality Control, Sustainability), Our Services tiles, Partner Factories banner, Certifications,
   Our Buyers, CTA.
 - Inner pages: /company /products /services /quality /sustainability /contact (RFQ form + file upload) /privacy /terms.
-- /api/rfq validates fields+files, honeypot + timing spam check (returns a reference; nothing stored/emailed).
+- /contact: redesigned 2026-09-21 as a friendly 3-step guided form (photo option cards -> describe + drag-and-drop files -> name/email), DM Sans font, big green buttons, plain-English errors, WhatsApp chat link, pre-selects from ?garment= links. Only name, email, a category and (description OR a file) are required.
+- /api/rfq validates fields+files, honeypot + timing spam check (returns a reference; nothing stored/emailed). Company is optional.
 - sitemap.xml, robots.txt (AI crawlers allowed), JSON-LD, per-page metadata.
 
 NOT done / caveats:

@@ -19,6 +19,9 @@
   --color-text: var(--text);
   --color-muted: var(--muted);
   --color-green: var(--green);
+  --color-action: #1d7a3e;
+  --color-action-dark: #16612f;
+  --font-form: var(--font-dm), "Segoe UI", system-ui, sans-serif;
   --font-heading: var(--font-montserrat), "Avenir Next", Avenir, "Segoe UI", sans-serif;
   --font-body: var(--font-nunito), "Avenir Next", Avenir, "Segoe UI", sans-serif;
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);

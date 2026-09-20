@@ -206,3 +206,11 @@ export const rfqCategories = [
   { value: "home-textiles", label: "Home textiles" },
   { value: "other", label: "Other" },
 ];
+
+/** Big, friendly choices for the enquiry form (photo cards). */
+export const rfqOptions: { value: string; label: string; image: string | null; position?: string; match: string[] }[] = [
+  ...productGroups.map((g) => ({ value: g.slug, label: g.name.replace(" · ", " & "), image: g.image, position: g.position, match: g.garments.map(toValue) })),
+  { value: "fashion-casualwear", label: "Fashion & Casualwear", image: "/images/fashion.jpg", position: "center 40%", match: [] },
+  { value: "home-textiles", label: "Home Textiles", image: "/images/home.jpg", position: "center 50%", match: [] },
+  { value: "other", label: "Something else", image: null, match: [] },
+];

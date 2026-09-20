@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Montserrat, Nunito_Sans } from "next/font/google";
+import { Montserrat, Nunito_Sans, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { Header } from "@/components/Header";
@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { site } from "@/lib/content";
 
 const heading = Montserrat({ subsets: ["latin"], variable: "--font-montserrat", display: "swap" });
+const form = DM_Sans({ subsets: ["latin"], variable: "--font-dm", display: "swap" });
 const body = Nunito_Sans({ subsets: ["latin"], style: ["normal", "italic"], variable: "--font-nunito", display: "swap" });
 
 const description =
@@ -39,7 +40,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${heading.variable} ${body.variable}`}>
+    <html lang="en" className={`${heading.variable} ${body.variable} ${form.variable}`}>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <SmoothScroll>
